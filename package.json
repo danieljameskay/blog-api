@@ -1,0 +1,27 @@
+{
+  "name": "blog-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljameskay/blog-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieljameskay/blog-express/issues"
+  },
+  "homepage": "https://github.com/danieljameskay/blog-express#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-ejs-layouts": "^2.3.0",
+    "mongoose": "^4.9.7"
+  }
+}
