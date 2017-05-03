@@ -7,11 +7,19 @@ module.exports = {
 }
 
 function showPosts (req, res) {
-    res.render('pages/posts', {posts});
+    Post.find({}, (err, posts) => {
+        res.json(posts);
+        console.log("Json returned to the client.")
+    })
+    //res.render('pages/posts', {posts});
 }
 
 function showPost (req, res) {
-    res.render('pages/post', {post});
+    Post.findOne({ postId: '6'}, (err, post) => {
+        res.json(post);
+        console.log("Json returned to the client.")
+    })
+    //res.render('pages/post', {post});
 }
 
 function seedPosts (req,res) {
