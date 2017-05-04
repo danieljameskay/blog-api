@@ -16,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/danieljameskay/blog-express/issues"
   },
-  "homepage": "https://github.com/danieljameskay/blog-express#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",

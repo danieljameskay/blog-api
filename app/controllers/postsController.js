@@ -3,7 +3,7 @@ const Post = require('../models/post');
 module.exports = {
     showPosts: showPosts,
     showPost: showPost,
-    seedPosts: seedPosts,
+    seed: seed,
     createPost: createPost,
     createPost_post: createPost_post
 }
@@ -44,7 +44,7 @@ function createPost_post (req, res){
     })
 }
 
-function seedPosts (req,res) {
+function seed (req,res) {
     const posts = [{
         'postId': '5',
         'image': 'http://lorempixel.com/400/200/cats',
