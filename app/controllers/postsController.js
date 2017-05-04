@@ -9,20 +9,19 @@ module.exports = {
 function showPosts (req, res) {
     Post.find({}, (err, posts) => {
         if(err){
-            console.log(err);
+            // error locgic
         }
-        res.json(posts);
-        console.log("Json returned to the client.")
+        res.render('pages/posts', {posts});
     })
-    //res.render('pages/posts', {posts});
 }
 
 function showPost (req, res) {
     Post.findOne({ postId: req.params.id }, (err, post) => {
-        res.json(post);
-        console.log("Json returned to the client.")
+        if(err){
+            // error logic
+        }
+        res.render('pages/post', {post});
     })
-    //res.render('pages/post', {post});
 }
 
 function seedPosts (req,res) {
