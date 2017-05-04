@@ -4,9 +4,15 @@ const express = require("express"),
     app = express(),
     port = process.env.PORT || 8080,
     expressLayouts = require('express-ejs-layouts'),
+    bodyParser = require('body-parser');
     moongoose = require('mongoose');
 
 moongoose.connect(process.env.DB_URI);
+
+bodyParser.json();
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
 
 app.set('view engine', 'ejs');
 

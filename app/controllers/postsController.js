@@ -3,7 +3,9 @@ const Post = require('../models/post');
 module.exports = {
     showPosts: showPosts,
     showPost: showPost,
-    seedPosts: seedPosts
+    seedPosts: seedPosts,
+    createPost: createPost,
+    createPost_post: createPost_post
 }
 
 function showPosts (req, res) {
@@ -21,6 +23,24 @@ function showPost (req, res) {
             // error logic
         }
         res.render('pages/post', {post});
+    })
+}
+
+function createPost (req, res){
+    res.render('pages/create');
+}
+
+function createPost_post (req, res){
+    const post = Post({
+        postId: req.body.postId,
+        image: req.body.image,
+        title: req.body.title,
+        date: req.body.date,
+        body: req.body.body,
+    });
+
+    post.save((err) => {
+        res.json("message:user created");
     })
 }
 
