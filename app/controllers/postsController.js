@@ -40,7 +40,7 @@ function createPost_post (req, res){
     });
 
     post.save((err) => {
-        res.json("message:user created");
+        res.send("user created");
     })
 }
 
