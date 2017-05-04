@@ -8,6 +8,9 @@ module.exports = {
 
 function showPosts (req, res) {
     Post.find({}, (err, posts) => {
+        if(err){
+            console.log(err);
+        }
         res.json(posts);
         console.log("Json returned to the client.")
     })
@@ -15,7 +18,7 @@ function showPosts (req, res) {
 }
 
 function showPost (req, res) {
-    Post.findOne({ postId: '6'}, (err, post) => {
+    Post.findOne({ postId: req.params.id }, (err, post) => {
         res.json(post);
         console.log("Json returned to the client.")
     })
