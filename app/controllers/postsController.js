@@ -31,7 +31,7 @@ function createPost (req, res){
 }
 
 function createPost_post (req, res){
-    const post = Post({
+    const newPost = new Post({
         postId: req.body.postId,
         image: req.body.image,
         title: req.body.title,
@@ -39,8 +39,8 @@ function createPost_post (req, res){
         body: req.body.body,
     });
 
-    post.save((err) => {
-        res.send("user created");
+    newPost.save((err) => {
+        res.render('pages/home');
     })
 }
 
