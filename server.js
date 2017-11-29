@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const express = require("express"),
     app = express(),
-    port = process.env.PORT || 8080,
     expressLayouts = require('express-ejs-layouts'),
     bodyParser = require('body-parser');
     moongoose = require('mongoose');
@@ -27,6 +26,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(expressLayouts);
 app.use(require('./app/routes'));
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 8080, () => {
     console.log(`Listening on port: ${port}`);
 })
