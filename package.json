@@ -28,5 +28,5 @@
     "express-ejs-layouts": "^2.3.0",
     "mongoose": "^4.9.7",
     "cors": "^2.8.4"
-  },
+  }
 }
