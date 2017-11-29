@@ -19,9 +19,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', process.env.SITE_URI);
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+    res.setHeader('Access-Control-Allow-Credentials', true)
     next();
 });
 
-app.listen(app.get('port'), () => {console.log(`Listening on port: ${port}`});
+app.listen(app.get('port'), () => {console.log(`Listening on port: ${port}`})})
+
