@@ -24,5 +24,5 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.listen(app.get('port'), () => {console.log(`Listening on port: ${port}`})})
+app.listen(app.get('port'), () => {console.log(`Listening on port: ${port}`)});
 
