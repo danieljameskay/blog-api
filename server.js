@@ -13,10 +13,11 @@ bodyParser.json();
 app.set('view engine', 'ejs');
 app.set('port', (process.env.PORT || 3000));
 
+app.use(cors());
 app.use(express.static(__dirname + '/public'));
 app.use(expressLayouts);
 app.use(require('./app/routes'));
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(cors());
+
 
 app.listen(app.get('port'), () => {console.log(`Listening on port: ${app.get('port')}`)});
