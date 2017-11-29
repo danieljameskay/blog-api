@@ -6,13 +6,13 @@ const express = require("express"),
     bodyParser = require('body-parser');
     moongoose = require('mongoose');
 
-let port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 
 moongoose.connect(process.env.DB_URI);
 bodyParser.json();
 
 app.set('view engine', 'ejs');
-
+app.set('port', port);
 app.use(express.static(__dirname + '/public'));
 app.use(expressLayouts);
 app.use(require('./app/routes'));
@@ -25,6 +25,4 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.listen(port, () => {
-    console.log(`Listening on port: ${port}`);
-})
+app.listen(port, () => {console.log(`Listening on port: ${port}`});
